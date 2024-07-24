@@ -66,16 +66,41 @@ public partial class MainPage : ContentPage
         }
     }
 	
+	int? selectedNumber;
+	public int? SelectedNumber
+    {
+        get => selectedNumber;
+        set
+        {
+            if (selectedNumber != value)
+            {
+                selectedNumber = value;
+                OnPropertyChanged();
+            }
+        }
+    }
+
 
 	public ICommand SolveCommand => new Command<string>((cellNumber) =>
 	{
-		Int32.TryParse(cellNumber, out int cellNumberInt);
+		SelectedNumber = Int32.Parse(cellNumber);
 
-		int row = cellNumberInt / 9;
-		int col = cellNumberInt % 9;
+		int row = SelectedNumber.Value / 9;
+		int col = SelectedNumber.Value % 9;
 
 		SelectedCellRow = row + 1 + row / 3;
 		SelectedCellColumn = col + 1 + col / 3;
+	});
+
+	
+	public ICommand PlaceNumber => new Command<string>((cellNumber) =>
+	{
+		if (SelectedNumber == null || !SelectedNumber.HasValue)
+			return;
+
+		Int32.TryParse(cellNumber, out int cellNumberInt);
+
+		SudokuArray[SelectedNumber.Value] = cellNumberInt;
 
 		OnPropertyChanged(nameof(SudokuArray));
 	});

@@ -9,20 +9,28 @@
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="TextColor" Value="Black" />
-                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontSize" Value="16" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="BorderWidth" Value="1" />
                 <Setter Property="BorderColor" Value="#4157E2" />
                 <Setter Property="CornerRadius" Value="3" />
-                <Setter Property="HeightRequest" Value="50" />
-                <Setter Property="WidthRequest" Value="50" />
+                <Setter Property="HeightRequest" Value="32" />
+                <Setter Property="WidthRequest" Value="32" />
+                <Setter Property="Padding" Value="0" />
+            </Style>
+            
+            <Style TargetType="Button" x:Key="UniqueButtonStyle">
+                <Setter Property="HeightRequest" Value="52" />
+            </Style>
+            
+            <Style TargetType="Button" x:Key="ActionBtn">
             </Style>
 
             <toolkit:IsNotNullConverter x:Key="IsNotNullConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid RowDefinitions="100, 50, 50, 50, 5, 50, 50, 50, 5, 50, 50, 50, *" ColumnDefinitions="*, 50, 50, 50, 5, 50, 50, 50, 5, 50, 50, 50,*">
+    <Grid RowDefinitions="100, 32, 32, 32, 3, 32, 32, 32, 3, 32, 32, 32, *,  150, *" ColumnDefinitions="*, 32, 32, 32, 3, 32, 32, 32, 3, 32, 32, 32, *">
         <Rectangle Grid.Row="{Binding SelectedCellRow}" IsVisible="{Binding SelectedCellRow, Converter={StaticResource IsNotNullConverter}}" Grid.Column="1" Grid.ColumnSpan="11" Fill="#59A2EB" Opacity=".5"/>
         <Rectangle Grid.Row="1" Grid.Column="{Binding SelectedCellColumn}" IsVisible="{Binding SelectedCellColumn, Converter={StaticResource IsNotNullConverter}}" Grid.RowSpan="11" Fill="#59A2EB" Opacity=".5"/>
 
@@ -31,13 +39,13 @@
         <Button Grid.Row="1" Grid.Column="2" Text="{Binding SudokuArray[1]}" Command="{Binding SolveCommand}" CommandParameter="1" />
         <Button Grid.Row="1" Grid.Column="3" Text="{Binding SudokuArray[2]}" Command="{Binding SolveCommand}" CommandParameter="2" />
 
-        <Rectangle Grid.Row="1" Grid.Column="4" Grid.RowSpan="11" Fill="#596DEB" WidthRequest="5" />
+        <Rectangle Grid.Row="1" Grid.Column="4" Grid.RowSpan="11" Fill="#596DEB" HorizontalOptions="Fill" />
 
         <Button Grid.Row="1" Grid.Column="5" Text="{Binding SudokuArray[3]}" Command="{Binding SolveCommand}" CommandParameter="3" />
         <Button Grid.Row="1" Grid.Column="6" Text="{Binding SudokuArray[4]}" Command="{Binding SolveCommand}" CommandParameter="4" />
         <Button Grid.Row="1" Grid.Column="7" Text="{Binding SudokuArray[5]}" Command="{Binding SolveCommand}" CommandParameter="5" />
         
-        <Rectangle Grid.Row="1" Grid.Column="8"  Grid.RowSpan="11" Fill="#596DEB" WidthRequest="5" />
+        <Rectangle Grid.Row="1" Grid.Column="8"  Grid.RowSpan="11" Fill="#596DEB" HorizontalOptions="Fill" />
 
         <Button Grid.Row="1" Grid.Column="9" Text="{Binding SudokuArray[6]}" Command="{Binding SolveCommand}" CommandParameter="6" />
         <Button Grid.Row="1" Grid.Column="10" Text="{Binding SudokuArray[7]}" Command="{Binding SolveCommand}" CommandParameter="7" />
@@ -72,7 +80,7 @@
 
         
         <!-- Row 4 -->
-        <Rectangle Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="11" Fill="#596DEB" HeightRequest="5" />
+        <Rectangle Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="11" Fill="#596DEB" VerticalOptions="Fill" />
         
         <!-- Row 5 -->
         <Button Grid.Row="5" Grid.Column="1" Text="{Binding SudokuArray[27]}" Command="{Binding SolveCommand}" CommandParameter="27" />
@@ -115,7 +123,7 @@
         
         
         <!-- Row 4 -->
-        <Rectangle Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="11" Fill="#596DEB" HeightRequest="5" />
+        <Rectangle Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="11" Fill="#596DEB" VerticalOptions="Fill" />
 
         <!-- Row 8 -->
         <Button Grid.Row="9" Grid.Column="1" Text="{Binding SudokuArray[54]}" Command="{Binding SolveCommand}" CommandParameter="54" />
@@ -155,6 +163,24 @@
         <Button Grid.Row="11" Grid.Column="9" Text="{Binding SudokuArray[78]}" Command="{Binding SolveCommand}" CommandParameter="78" />
         <Button Grid.Row="11" Grid.Column="10" Text="{Binding SudokuArray[79]}" Command="{Binding SolveCommand}" CommandParameter="79" />
         <Button Grid.Row="11" Grid.Column="11" Text="{Binding SudokuArray[80]}" Command="{Binding SolveCommand}" CommandParameter="80" />
+
+
+        <Grid Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="11" ColumnSpacing="2" RowDefinitions="Auto, 52, 32" ColumnDefinitions="*,*,*,*,*,*,*,*,*" IsVisible="{Binding SelectedNumber, Converter={StaticResource IsNotNullConverter}}" >
+            <Label Text="Select A Number To Be Placed" FontAttributes="Bold" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="9" />
+
+            <Button Grid.Column="0" Grid.Row="1" Text="1" Style="{StaticResource UniqueButtonStyle}" Command="{Binding PlaceNumber}" CommandParameter="1"/>
+            <Button Grid.Column="1" Grid.Row="1" Text="2" Style="{StaticResource UniqueButtonStyle}" Command="{Binding PlaceNumber}" CommandParameter="2"/>
+            <Button Grid.Column="2" Grid.Row="1" Text="3" Style="{StaticResource UniqueButtonStyle}" Command="{Binding PlaceNumber}" CommandParameter="3"/>
+            <Button Grid.Column="3" Grid.Row="1" Text="4" Style="{StaticResource UniqueButtonStyle}" Command="{Binding PlaceNumber}" CommandParameter="4"/>
+            <Button Grid.Column="4" Grid.Row="1" Text="5" Style="{StaticResource UniqueButtonStyle}" Command="{Binding PlaceNumber}" CommandParameter="5"/>
+            <Button Grid.Column="5" Grid.Row="1" Text="6" Style="{StaticResource UniqueButtonStyle}" Command="{Binding PlaceNumber}" CommandParameter="6"/>
+            <Button Grid.Column="6" Grid.Row="1" Text="7" Style="{StaticResource UniqueButtonStyle}" Command="{Binding PlaceNumber}" CommandParameter="7"/>
+            <Button Grid.Column="7" Grid.Row="1" Text="8" Style="{StaticResource UniqueButtonStyle}" Command="{Binding PlaceNumber}" CommandParameter="8"/>
+            <Button Grid.Column="8" Grid.Row="1" Text="9" Style="{StaticResource UniqueButtonStyle}" Command="{Binding PlaceNumber}" CommandParameter="9"/>
+
+            <Button Style="{StaticResource ActionBtn}" Text="Clear Selection" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" />
+            <Button Style="{StaticResource ActionBtn}" Text="Hide Used Numbers" Grid.Column="6" Grid.ColumnSpan="3" Grid.Row="2" />
+        </Grid>
 
     </Grid>
 
