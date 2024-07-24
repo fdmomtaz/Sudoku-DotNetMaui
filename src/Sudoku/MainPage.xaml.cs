@@ -104,5 +104,30 @@ public partial class MainPage : ContentPage
 
 		OnPropertyChanged(nameof(SudokuArray));
 	});
+
+    public bool IsValidNumber(int number, int index) {
+        
+		int row = index.Value / 9;
+		int col = index.Value % 9;
+        int box = index.value / 3;
+
+        for (int r = 0; r < 9; r++) {
+            int valueIndex = row * 9 + r;
+
+            if (SudokuArray[valueIndex] == number)
+                return false;
+        }
+
+        for (int c = 0; c < 9; c++) {
+            int valueIndex = c * 9 + col;
+
+            if (SudokuArray[valueIndex] == number)
+                return false;
+        }
+
+
+
+        return true;
+    }
 }
 
