@@ -7,9 +7,5 @@
     Shell.FlyoutBehavior="Disabled"
     Title="Sudoku">
 
-    <ShellContent
-        Title="Menu"
-        ContentTemplate="{DataTemplate local:MenuPage}"
-        Route="MenuPage" />
-
+    <ShellContent Title="Menu" ContentTemplate="{DataTemplate local:MenuPage}" Route="Menu" />
 </Shell>

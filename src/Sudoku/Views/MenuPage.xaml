@@ -14,7 +14,7 @@
         <VerticalStackLayout Grid.Row="1" Spacing="10" Padding="20">
             <Button Text="New Game" Clicked="NewGame_Clicked" />
 
-            <Button Text="Continue" Clicked="Continue_Clicked" />
+            <Button x:Name="ContinueBtn" Text="Continue" Clicked="Continue_Clicked" />
 
             <Button Text="Settings" Clicked="Settings_Clicked" />
         </VerticalStackLayout>
