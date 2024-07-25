@@ -173,7 +173,6 @@ public partial class MainPage : ContentPage
 
     public bool IsValidNumber(int number, int index) {
         
-        Console.WriteLine($"Checking if {number} is valid for {index}");
 		int row = index / 9;
 		int col = index % 9;
         int boxRow = row / 3;
