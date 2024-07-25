@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             x:Class="Sudoku.MenuPage"
+             ios:Page.UseSafeArea="False"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="250, *">
+        <Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Aspect="AspectFill" Source="menu_background.jpeg" />
+
+        <Label Grid.Row="0" Text="Sudoku" FontFamily="EloundaRegular" FontSize="50" VerticalOptions="Center" HorizontalOptions="Center" />
+    
+        <VerticalStackLayout Grid.Row="1" Spacing="10" Padding="20">
+            <Button Text="New Game" Clicked="NewGame_Clicked" />
+
+            <Button Text="Continue" Clicked="Continue_Clicked" />
+
+            <Button Text="Settings" Clicked="Settings_Clicked" />
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

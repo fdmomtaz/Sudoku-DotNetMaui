@@ -8,8 +8,8 @@
     Title="Sudoku">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Title="Menu"
+        ContentTemplate="{DataTemplate local:MenuPage}"
+        Route="MenuPage" />
 
 </Shell>
