@@ -7,8 +7,7 @@ public partial class MenuPage : ContentPage
 		InitializeComponent();
 	}
 
-
-    protected override async void OnAppearing()
+    protected override void OnAppearing()
     {
         base.OnAppearing();
 

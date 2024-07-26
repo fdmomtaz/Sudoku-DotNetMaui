@@ -6,40 +6,23 @@ using CoreData;
 
 namespace Sudoku;
 
-// [QueryProperty(nameof(ContinueGame), "ContinueGame")]
+[QueryProperty(nameof(ContinueGame), "ContinueGame")]
 public partial class GamePage : ContentPage
 {
-    // public bool ContinueGame
-    // {
-    //     set
-    //     {
-    //         if (value) {
-    //             string cacheDir = FileSystem.Current.CacheDirectory;
-    //             string filePath = Path.Combine(cacheDir, "sudoku.json");
-
-    //             if (File.Exists(filePath))
-    //             {
-    //                 string json = File.ReadAllText(filePath);
-    //                 SudokuArray = JsonSerializer.Deserialize<int?[]>(json);
-    //             }
-
-    //         }
-    //         else {
-    //             Tuple<int?[], int[]>? generatedSudoku = SudokuGenerator.GetBoard(SudokuGenerator.Difficulty.Medium);
-
-    //             SudokuArray = generatedSudoku.Item1;
-    //             providedNumbers = generatedSudoku.Item2;
-    //         }
-    //     }
-    // }
+    public bool ContinueGame { get; set; } = false;
 
 
 	public GamePage()
 	{
 		InitializeComponent();
-
-		BindingContext = new GameViewModel();
 	}
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+		BindingContext = new GameViewModel(ContinueGame);
+    }
 	
 	private async void Close_Clicked(object sender, EventArgs e)
 	{

@@ -13,20 +13,46 @@ public class GameViewModel : INotifyPropertyChanged
 
     public void OnPropertyChanged([CallerMemberName] string name = "") =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-
     
-    public GameViewModel()
-    {
-        Tuple<int?[], int[]>? generatedSudoku = SudokuGenerator.GetBoard(SudokuGenerator.Difficulty.Medium);
+    private string GameSavePath {
+        get {
+            string cacheDir = FileSystem.Current.CacheDirectory;
+            return Path.Combine(cacheDir, "sudoku.json");
+        }
+    }
 
-        SudokuArray = generatedSudoku.Item1;
-        providedNumbers = generatedSudoku.Item2;
+    public GameViewModel(bool ContinueGame)
+    {
+        SudokuBoard? generatedSudoku = null;
+
+        if (ContinueGame) {
+            if (File.Exists(GameSavePath))
+            {
+                string json = File.ReadAllText(GameSavePath);
+                generatedSudoku = JsonSerializer.Deserialize<SudokuBoard>(json);
+            }
+
+            if (generatedSudoku != null)
+            {
+                var toast = Toast.Make("Your game was successfully loaded", ToastDuration.Short);
+                toast.Show();
+            }
+        }
+
+        // if no saved game, generate a new one
+        if (generatedSudoku == null)
+            generatedSudoku = SudokuGenerator.GetBoard(SudokuGenerator.Difficulty.Medium);
+
+        // populate the sudoku array and provided numbers
+        SudokuArray = generatedSudoku.Board;
+        providedNumbers = generatedSudoku.PermanentValues;
     }
     
+    // Array of the numbers provided by the game that can't be changed
     int[] providedNumbers = new int[0];
 
+    // Array of the sudoku board
 	int?[] sudokuArray = new int? [81];
-
 	public int?[] SudokuArray
     {
         get => sudokuArray;
@@ -40,9 +66,8 @@ public class GameViewModel : INotifyPropertyChanged
         }
     }
 
-    
+    // Array of possible inputs for the selected cell
 	bool[] availableNumbers = new bool[9] {true, true, true, true, true, true, true, true, true};
-
 	public bool[] AvailableNumbers
     {
         get => availableNumbers;
@@ -56,6 +81,7 @@ public class GameViewModel : INotifyPropertyChanged
         }
     }
 
+    // Calculated properties based on SelectedNumber
 	public int? SelectedRow
     {
         get {
@@ -67,6 +93,7 @@ public class GameViewModel : INotifyPropertyChanged
         }
     }
 
+    // Calculated properties based on SelectedNumber
 	public int? SelectedColumn
     {
         get  { 
@@ -78,6 +105,7 @@ public class GameViewModel : INotifyPropertyChanged
         }
     }
 
+    // Calculated properties based on SelectedNumber
     public int? SelectedBoxRow { 
         get { 
             if (SelectedNumber == null || !SelectedNumber.HasValue)
@@ -88,6 +116,7 @@ public class GameViewModel : INotifyPropertyChanged
         } 
     }
 
+    // Calculated properties based on SelectedNumber
     public int? SelectedBoxColumn { 
         get {         
             if (SelectedNumber == null || !SelectedNumber.HasValue)
@@ -98,6 +127,7 @@ public class GameViewModel : INotifyPropertyChanged
         }
     }
 	
+    // Index of the selected cell
 	int? selectedNumber;
 	public int? SelectedNumber
     {
@@ -116,22 +146,27 @@ public class GameViewModel : INotifyPropertyChanged
         }
     }
 
-	public ICommand SaveGame => new Command(() =>
+    // Command to save the game
+	public ICommand SaveGameCommand => new Command(() =>
     {
-		string cacheDir = FileSystem.Current.CacheDirectory;
-        string filePath = Path.Combine(cacheDir, "sudoku.json");
+        // delete the old save file if it exists
+		if (File.Exists(GameSavePath))
+            File.Delete(GameSavePath);
 
-		if (File.Exists(filePath))
-            File.Delete(filePath);
+        // generate a tuple with the sudoku array and the provided numbers
+        SudokuBoard sudoku = new SudokuBoard(SudokuArray, providedNumbers);
 
-        string json = JsonSerializer.Serialize(SudokuArray);
-        File.WriteAllText(filePath, json);
+        // serialize the tuple and save it to a file
+        string json = JsonSerializer.Serialize(sudoku);
+        File.WriteAllText(GameSavePath, json);
     });
 
-	public ICommand SolveCommand => new Command<string>((cellNumber) =>
+    // Command to highlight and select a cell to be placed
+	public ICommand SelectCellCommand => new Command<string>((cellNumber) =>
 	{
 		Int32.TryParse(cellNumber, out int cellNumberInt);
         
+        // check to see if the number can be changed
         if (providedNumbers.Contains(cellNumberInt))
         {
             var toast = Toast.Make("You can't change the numbers that you didn't place", ToastDuration.Short);
@@ -139,25 +174,23 @@ public class GameViewModel : INotifyPropertyChanged
             return;
         }
         
+        // set the selected number to the cell number
 		SelectedNumber = cellNumberInt;
 
-		int row = SelectedNumber.Value / 9;
-		int col = SelectedNumber.Value % 9;
-
+        // check if the option to hide used numbers is enabled
         if (Preferences.Default.Get("HideUsedNumbers",true))
         {
-            bool[] tmpArray = new bool[9];
             for (int i = 0; i < 9; i++)
             {
-                tmpArray[i] = IsValidNumber(i+1, cellNumberInt);
+                AvailableNumbers[i] = IsValidNumber(i+1, cellNumberInt);
             }
 
-		    AvailableNumbers = tmpArray;
+		    OnPropertyChanged(nameof(AvailableNumbers));
         }
 	});
-
 	
-	public ICommand PlaceNumber => new Command<string>((cellNumber) =>
+    // place the selected number in the selected cell
+	public ICommand PlaceNumberCommand => new Command<string>((cellNumber) =>
 	{
 		if (SelectedNumber == null || !SelectedNumber.HasValue)
 			return;
@@ -179,10 +212,11 @@ public class GameViewModel : INotifyPropertyChanged
         SelectedNumber = null;
 	});
 
-    public bool IsValidNumber(int number, int index) {
+    // check to see if the selected number can be placed in the selected cell
+    public bool IsValidNumber(int number, int cellIndex) {
         
-		int row = index / 9;
-		int col = index % 9;
+		int row = cellIndex / 9;
+		int col = cellIndex % 9;
         int boxRow = row / 3;
         int boxCol = col / 3;
 

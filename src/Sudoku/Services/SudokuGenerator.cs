@@ -94,7 +94,7 @@ public static class SudokuGenerator
         }
     }
 
-    public static Tuple<int?[], int[]> GetBoard(Difficulty difficulty)
+    public static SudokuBoard GetBoard(Difficulty difficulty)
     {
         int?[] board = new int?[81];
         int[] providedNumbers = new int[(int)difficulty];
@@ -112,7 +112,7 @@ public static class SudokuGenerator
             providedNumbers[i] = copyIndex;
         }
 
-        return new Tuple<int?[], int[]>(board, providedNumbers);
+        return new SudokuBoard(board, providedNumbers);
     }
 
 
