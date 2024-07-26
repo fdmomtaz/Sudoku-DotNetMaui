@@ -12,6 +12,15 @@ In this project, I created a Sudoku game using .NET MAUI. My goal was to develop
 
 ## Screenshots
 
+**Game Play**
+
+![Game PLay](Screenshots/GamePlay.jpeg "Game Play")
+![Game PLay Dark](Screenshots/GamePlayDark.jpeg "Game Play Dark")
+
+**Menu**
+
+![Menu](Screenshots/Menu.jpeg "Sudoku Menu")
+![Menu Dark](Screenshots/MenuDark.jpeg "Sudoku Menu Dark")
 
 ## Technologies Used
 
