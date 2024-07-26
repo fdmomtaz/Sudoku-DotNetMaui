@@ -58,134 +58,134 @@
 
 
         <!-- Row 1 -->
-        <Button Grid.Row="1" Grid.Column="1" Text="{Binding SudokuArray[0]}" Command="{Binding SolveCommand}" CommandParameter="0" />
-        <Button Grid.Row="1" Grid.Column="2" Text="{Binding SudokuArray[1]}" Command="{Binding SolveCommand}" CommandParameter="1" />
-        <Button Grid.Row="1" Grid.Column="3" Text="{Binding SudokuArray[2]}" Command="{Binding SolveCommand}" CommandParameter="2" />
+        <Button Grid.Row="1" Grid.Column="1" Text="{Binding SudokuArray[0], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="0" />
+        <Button Grid.Row="1" Grid.Column="2" Text="{Binding SudokuArray[1], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="1" />
+        <Button Grid.Row="1" Grid.Column="3" Text="{Binding SudokuArray[2], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="2" />
 
         <Rectangle Grid.Row="1" Grid.Column="4" Grid.RowSpan="11" Fill="#596DEB" HorizontalOptions="Fill" />
 
-        <Button Grid.Row="1" Grid.Column="5" Text="{Binding SudokuArray[3]}" Command="{Binding SolveCommand}" CommandParameter="3" />
-        <Button Grid.Row="1" Grid.Column="6" Text="{Binding SudokuArray[4]}" Command="{Binding SolveCommand}" CommandParameter="4" />
-        <Button Grid.Row="1" Grid.Column="7" Text="{Binding SudokuArray[5]}" Command="{Binding SolveCommand}" CommandParameter="5" />
+        <Button Grid.Row="1" Grid.Column="5" Text="{Binding SudokuArray[3], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="3" />
+        <Button Grid.Row="1" Grid.Column="6" Text="{Binding SudokuArray[4], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="4" />
+        <Button Grid.Row="1" Grid.Column="7" Text="{Binding SudokuArray[5], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="5" />
         
         <Rectangle Grid.Row="1" Grid.Column="8"  Grid.RowSpan="11" Fill="#596DEB" HorizontalOptions="Fill" />
 
-        <Button Grid.Row="1" Grid.Column="9" Text="{Binding SudokuArray[6]}" Command="{Binding SolveCommand}" CommandParameter="6" />
-        <Button Grid.Row="1" Grid.Column="10" Text="{Binding SudokuArray[7]}" Command="{Binding SolveCommand}" CommandParameter="7" />
-        <Button Grid.Row="1" Grid.Column="11" Text="{Binding SudokuArray[8]}" Command="{Binding SolveCommand}" CommandParameter="8" />
+        <Button Grid.Row="1" Grid.Column="9" Text="{Binding SudokuArray[6], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="6" />
+        <Button Grid.Row="1" Grid.Column="10" Text="{Binding SudokuArray[7], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="7" />
+        <Button Grid.Row="1" Grid.Column="11" Text="{Binding SudokuArray[8], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="8" />
 
         
         <!-- Row 2 -->
-        <Button Grid.Row="2" Grid.Column="1" Text="{Binding SudokuArray[9]}" Command="{Binding SolveCommand}" CommandParameter="9" />
-        <Button Grid.Row="2" Grid.Column="2" Text="{Binding SudokuArray[10]}" Command="{Binding SolveCommand}" CommandParameter="10" />
-        <Button Grid.Row="2" Grid.Column="3" Text="{Binding SudokuArray[11]}" Command="{Binding SolveCommand}" CommandParameter="11" />
+        <Button Grid.Row="2" Grid.Column="1" Text="{Binding SudokuArray[9], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="9" />
+        <Button Grid.Row="2" Grid.Column="2" Text="{Binding SudokuArray[10], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="10" />
+        <Button Grid.Row="2" Grid.Column="3" Text="{Binding SudokuArray[11], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="11" />
 
-        <Button Grid.Row="2" Grid.Column="5" Text="{Binding SudokuArray[12]}" Command="{Binding SolveCommand}" CommandParameter="12" />
-        <Button Grid.Row="2" Grid.Column="6" Text="{Binding SudokuArray[13]}" Command="{Binding SolveCommand}" CommandParameter="13" />
-        <Button Grid.Row="2" Grid.Column="7" Text="{Binding SudokuArray[14]}" Command="{Binding SolveCommand}" CommandParameter="14" />
+        <Button Grid.Row="2" Grid.Column="5" Text="{Binding SudokuArray[12], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="12" />
+        <Button Grid.Row="2" Grid.Column="6" Text="{Binding SudokuArray[13], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="13" />
+        <Button Grid.Row="2" Grid.Column="7" Text="{Binding SudokuArray[14], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="14" />
         
-        <Button Grid.Row="2" Grid.Column="9" Text="{Binding SudokuArray[15]}" Command="{Binding SolveCommand}" CommandParameter="15" />
-        <Button Grid.Row="2" Grid.Column="10" Text="{Binding SudokuArray[16]}" Command="{Binding SolveCommand}" CommandParameter="16" />
-        <Button Grid.Row="2" Grid.Column="11" Text="{Binding SudokuArray[17]}" Command="{Binding SolveCommand}" CommandParameter="17" />
+        <Button Grid.Row="2" Grid.Column="9" Text="{Binding SudokuArray[15], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="15" />
+        <Button Grid.Row="2" Grid.Column="10" Text="{Binding SudokuArray[16], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="16" />
+        <Button Grid.Row="2" Grid.Column="11" Text="{Binding SudokuArray[17], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="17" />
         
         <!-- Row 3 -->
-        <Button Grid.Row="3" Grid.Column="1" Text="{Binding SudokuArray[18]}" Command="{Binding SolveCommand}" CommandParameter="18" />
-        <Button Grid.Row="3" Grid.Column="2" Text="{Binding SudokuArray[19]}" Command="{Binding SolveCommand}" CommandParameter="19" />
-        <Button Grid.Row="3" Grid.Column="3" Text="{Binding SudokuArray[20]}" Command="{Binding SolveCommand}" CommandParameter="20" />
+        <Button Grid.Row="3" Grid.Column="1" Text="{Binding SudokuArray[18], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="18" />
+        <Button Grid.Row="3" Grid.Column="2" Text="{Binding SudokuArray[19], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="19" />
+        <Button Grid.Row="3" Grid.Column="3" Text="{Binding SudokuArray[20], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="20" />
 
-        <Button Grid.Row="3" Grid.Column="5" Text="{Binding SudokuArray[21]}" Command="{Binding SolveCommand}" CommandParameter="21" />
-        <Button Grid.Row="3" Grid.Column="6" Text="{Binding SudokuArray[22]}" Command="{Binding SolveCommand}" CommandParameter="22" />
-        <Button Grid.Row="3" Grid.Column="7" Text="{Binding SudokuArray[23]}" Command="{Binding SolveCommand}" CommandParameter="23" />
+        <Button Grid.Row="3" Grid.Column="5" Text="{Binding SudokuArray[21], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="21" />
+        <Button Grid.Row="3" Grid.Column="6" Text="{Binding SudokuArray[22], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="22" />
+        <Button Grid.Row="3" Grid.Column="7" Text="{Binding SudokuArray[23], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="23" />
         
-        <Button Grid.Row="3" Grid.Column="9" Text="{Binding SudokuArray[24]}" Command="{Binding SolveCommand}" CommandParameter="24" />
-        <Button Grid.Row="3" Grid.Column="10" Text="{Binding SudokuArray[25]}" Command="{Binding SolveCommand}" CommandParameter="25" />
-        <Button Grid.Row="3" Grid.Column="11" Text="{Binding SudokuArray[26]}" Command="{Binding SolveCommand}" CommandParameter="26" />
+        <Button Grid.Row="3" Grid.Column="9" Text="{Binding SudokuArray[24], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="24" />
+        <Button Grid.Row="3" Grid.Column="10" Text="{Binding SudokuArray[25], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="25" />
+        <Button Grid.Row="3" Grid.Column="11" Text="{Binding SudokuArray[26], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="26" />
 
         
         <!-- Row 4 -->
         <Rectangle Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="11" Fill="#596DEB" VerticalOptions="Fill" />
         
         <!-- Row 5 -->
-        <Button Grid.Row="5" Grid.Column="1" Text="{Binding SudokuArray[27]}" Command="{Binding SolveCommand}" CommandParameter="27" />
-        <Button Grid.Row="5" Grid.Column="2" Text="{Binding SudokuArray[28]}" Command="{Binding SolveCommand}" CommandParameter="28" />
-        <Button Grid.Row="5" Grid.Column="3" Text="{Binding SudokuArray[29]}" Command="{Binding SolveCommand}" CommandParameter="29" />
+        <Button Grid.Row="5" Grid.Column="1" Text="{Binding SudokuArray[27], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="27" />
+        <Button Grid.Row="5" Grid.Column="2" Text="{Binding SudokuArray[28], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="28" />
+        <Button Grid.Row="5" Grid.Column="3" Text="{Binding SudokuArray[29], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="29" />
 
-        <Button Grid.Row="5" Grid.Column="5" Text="{Binding SudokuArray[30]}" Command="{Binding SolveCommand}" CommandParameter="30" />
-        <Button Grid.Row="5" Grid.Column="6" Text="{Binding SudokuArray[31]}" Command="{Binding SolveCommand}" CommandParameter="31" />
-        <Button Grid.Row="5" Grid.Column="7" Text="{Binding SudokuArray[32]}" Command="{Binding SolveCommand}" CommandParameter="32" />
+        <Button Grid.Row="5" Grid.Column="5" Text="{Binding SudokuArray[30], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="30" />
+        <Button Grid.Row="5" Grid.Column="6" Text="{Binding SudokuArray[31], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="31" />
+        <Button Grid.Row="5" Grid.Column="7" Text="{Binding SudokuArray[32], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="32" />
         
-        <Button Grid.Row="5" Grid.Column="9" Text="{Binding SudokuArray[33]}" Command="{Binding SolveCommand}" CommandParameter="33" />
-        <Button Grid.Row="5" Grid.Column="10" Text="{Binding SudokuArray[34]}" Command="{Binding SolveCommand}" CommandParameter="34" />
-        <Button Grid.Row="5" Grid.Column="11" Text="{Binding SudokuArray[35]}" Command="{Binding SolveCommand}" CommandParameter="35" />
+        <Button Grid.Row="5" Grid.Column="9" Text="{Binding SudokuArray[33], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="33" />
+        <Button Grid.Row="5" Grid.Column="10" Text="{Binding SudokuArray[34], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="34" />
+        <Button Grid.Row="5" Grid.Column="11" Text="{Binding SudokuArray[35], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="35" />
         
         <!-- Row 6 -->
-        <Button Grid.Row="6" Grid.Column="1" Text="{Binding SudokuArray[36]}" Command="{Binding SolveCommand}" CommandParameter="36" />
-        <Button Grid.Row="6" Grid.Column="2" Text="{Binding SudokuArray[37]}" Command="{Binding SolveCommand}" CommandParameter="37" />
-        <Button Grid.Row="6" Grid.Column="3" Text="{Binding SudokuArray[38]}" Command="{Binding SolveCommand}" CommandParameter="38" />
+        <Button Grid.Row="6" Grid.Column="1" Text="{Binding SudokuArray[36], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="36" />
+        <Button Grid.Row="6" Grid.Column="2" Text="{Binding SudokuArray[37], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="37" />
+        <Button Grid.Row="6" Grid.Column="3" Text="{Binding SudokuArray[38], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="38" />
 
-        <Button Grid.Row="6" Grid.Column="5" Text="{Binding SudokuArray[39]}" Command="{Binding SolveCommand}" CommandParameter="39" />
-        <Button Grid.Row="6" Grid.Column="6" Text="{Binding SudokuArray[40]}" Command="{Binding SolveCommand}" CommandParameter="40" />
-        <Button Grid.Row="6" Grid.Column="7" Text="{Binding SudokuArray[41]}" Command="{Binding SolveCommand}" CommandParameter="41" />
+        <Button Grid.Row="6" Grid.Column="5" Text="{Binding SudokuArray[39], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="39" />
+        <Button Grid.Row="6" Grid.Column="6" Text="{Binding SudokuArray[40], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="40" />
+        <Button Grid.Row="6" Grid.Column="7" Text="{Binding SudokuArray[41], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="41" />
         
-        <Button Grid.Row="6" Grid.Column="9" Text="{Binding SudokuArray[42]}" Command="{Binding SolveCommand}" CommandParameter="42" />
-        <Button Grid.Row="6" Grid.Column="10" Text="{Binding SudokuArray[43]}" Command="{Binding SolveCommand}" CommandParameter="43" />
-        <Button Grid.Row="6" Grid.Column="11" Text="{Binding SudokuArray[44]}" Command="{Binding SolveCommand}" CommandParameter="44" />
+        <Button Grid.Row="6" Grid.Column="9" Text="{Binding SudokuArray[42], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="42" />
+        <Button Grid.Row="6" Grid.Column="10" Text="{Binding SudokuArray[43], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="43" />
+        <Button Grid.Row="6" Grid.Column="11" Text="{Binding SudokuArray[44], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="44" />
         
         <!-- Row 7 -->
-        <Button Grid.Row="7" Grid.Column="1" Text="{Binding SudokuArray[45]}" Command="{Binding SolveCommand}" CommandParameter="45" />
-        <Button Grid.Row="7" Grid.Column="2" Text="{Binding SudokuArray[46]}" Command="{Binding SolveCommand}" CommandParameter="46" />
-        <Button Grid.Row="7" Grid.Column="3" Text="{Binding SudokuArray[47]}" Command="{Binding SolveCommand}" CommandParameter="47" />
+        <Button Grid.Row="7" Grid.Column="1" Text="{Binding SudokuArray[45], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="45" />
+        <Button Grid.Row="7" Grid.Column="2" Text="{Binding SudokuArray[46], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="46" />
+        <Button Grid.Row="7" Grid.Column="3" Text="{Binding SudokuArray[47], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="47" />
 
-        <Button Grid.Row="7" Grid.Column="5" Text="{Binding SudokuArray[48]}" Command="{Binding SolveCommand}" CommandParameter="48" />
-        <Button Grid.Row="7" Grid.Column="6" Text="{Binding SudokuArray[49]}" Command="{Binding SolveCommand}" CommandParameter="49" />
-        <Button Grid.Row="7" Grid.Column="7" Text="{Binding SudokuArray[50]}" Command="{Binding SolveCommand}" CommandParameter="50" />
+        <Button Grid.Row="7" Grid.Column="5" Text="{Binding SudokuArray[48], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="48" />
+        <Button Grid.Row="7" Grid.Column="6" Text="{Binding SudokuArray[49], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="49" />
+        <Button Grid.Row="7" Grid.Column="7" Text="{Binding SudokuArray[50], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="50" />
         
-        <Button Grid.Row="7" Grid.Column="9" Text="{Binding SudokuArray[51]}" Command="{Binding SolveCommand}" CommandParameter="51" />
-        <Button Grid.Row="7" Grid.Column="10" Text="{Binding SudokuArray[52]}" Command="{Binding SolveCommand}" CommandParameter="52" />
-        <Button Grid.Row="7" Grid.Column="11" Text="{Binding SudokuArray[53]}" Command="{Binding SolveCommand}" CommandParameter="53" />
+        <Button Grid.Row="7" Grid.Column="9" Text="{Binding SudokuArray[51], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="51" />
+        <Button Grid.Row="7" Grid.Column="10" Text="{Binding SudokuArray[52], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="52" />
+        <Button Grid.Row="7" Grid.Column="11" Text="{Binding SudokuArray[53], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="53" />
         
         
         <!-- Row 4 -->
         <Rectangle Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="11" Fill="#596DEB" VerticalOptions="Fill" />
 
         <!-- Row 8 -->
-        <Button Grid.Row="9" Grid.Column="1" Text="{Binding SudokuArray[54]}" Command="{Binding SolveCommand}" CommandParameter="54" />
-        <Button Grid.Row="9" Grid.Column="2" Text="{Binding SudokuArray[55]}" Command="{Binding SolveCommand}" CommandParameter="55" />
-        <Button Grid.Row="9" Grid.Column="3" Text="{Binding SudokuArray[56]}" Command="{Binding SolveCommand}" CommandParameter="56" />
+        <Button Grid.Row="9" Grid.Column="1" Text="{Binding SudokuArray[54], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="54" />
+        <Button Grid.Row="9" Grid.Column="2" Text="{Binding SudokuArray[55], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="55" />
+        <Button Grid.Row="9" Grid.Column="3" Text="{Binding SudokuArray[56], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="56" />
 
-        <Button Grid.Row="9" Grid.Column="5" Text="{Binding SudokuArray[57]}" Command="{Binding SolveCommand}" CommandParameter="57" />
-        <Button Grid.Row="9" Grid.Column="6" Text="{Binding SudokuArray[58]}" Command="{Binding SolveCommand}" CommandParameter="58" />
-        <Button Grid.Row="9" Grid.Column="7" Text="{Binding SudokuArray[59]}" Command="{Binding SolveCommand}" CommandParameter="59" />
+        <Button Grid.Row="9" Grid.Column="5" Text="{Binding SudokuArray[57], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="57" />
+        <Button Grid.Row="9" Grid.Column="6" Text="{Binding SudokuArray[58], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="58" />
+        <Button Grid.Row="9" Grid.Column="7" Text="{Binding SudokuArray[59], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="59" />
         
-        <Button Grid.Row="9" Grid.Column="9" Text="{Binding SudokuArray[60]}" Command="{Binding SolveCommand}" CommandParameter="60" />
-        <Button Grid.Row="9" Grid.Column="10" Text="{Binding SudokuArray[61]}" Command="{Binding SolveCommand}" CommandParameter="61" />
-        <Button Grid.Row="9" Grid.Column="11" Text="{Binding SudokuArray[62]}" Command="{Binding SolveCommand}" CommandParameter="62" />
+        <Button Grid.Row="9" Grid.Column="9" Text="{Binding SudokuArray[60], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="60" />
+        <Button Grid.Row="9" Grid.Column="10" Text="{Binding SudokuArray[61], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="61" />
+        <Button Grid.Row="9" Grid.Column="11" Text="{Binding SudokuArray[62], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="62" />
         
         <!-- Row 9 -->
-        <Button Grid.Row="10" Grid.Column="1" Text="{Binding SudokuArray[63]}" Command="{Binding SolveCommand}" CommandParameter="63" />
-        <Button Grid.Row="10" Grid.Column="2" Text="{Binding SudokuArray[64]}" Command="{Binding SolveCommand}" CommandParameter="64" />
-        <Button Grid.Row="10" Grid.Column="3" Text="{Binding SudokuArray[65]}" Command="{Binding SolveCommand}" CommandParameter="65" />
+        <Button Grid.Row="10" Grid.Column="1" Text="{Binding SudokuArray[63], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="63" />
+        <Button Grid.Row="10" Grid.Column="2" Text="{Binding SudokuArray[64], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="64" />
+        <Button Grid.Row="10" Grid.Column="3" Text="{Binding SudokuArray[65], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="65" />
 
-        <Button Grid.Row="10" Grid.Column="5" Text="{Binding SudokuArray[66]}" Command="{Binding SolveCommand}" CommandParameter="66" />
-        <Button Grid.Row="10" Grid.Column="6" Text="{Binding SudokuArray[67]}" Command="{Binding SolveCommand}" CommandParameter="67" />
-        <Button Grid.Row="10" Grid.Column="7" Text="{Binding SudokuArray[68]}" Command="{Binding SolveCommand}" CommandParameter="68" />
+        <Button Grid.Row="10" Grid.Column="5" Text="{Binding SudokuArray[66], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="66" />
+        <Button Grid.Row="10" Grid.Column="6" Text="{Binding SudokuArray[67], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="67" />
+        <Button Grid.Row="10" Grid.Column="7" Text="{Binding SudokuArray[68], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="68" />
         
-        <Button Grid.Row="10" Grid.Column="9" Text="{Binding SudokuArray[69]}" Command="{Binding SolveCommand}" CommandParameter="69" />
-        <Button Grid.Row="10" Grid.Column="10" Text="{Binding SudokuArray[70]}" Command="{Binding SolveCommand}" CommandParameter="70" />
-        <Button Grid.Row="10" Grid.Column="11" Text="{Binding SudokuArray[71]}" Command="{Binding SolveCommand}" CommandParameter="71" />
+        <Button Grid.Row="10" Grid.Column="9" Text="{Binding SudokuArray[69], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="69" />
+        <Button Grid.Row="10" Grid.Column="10" Text="{Binding SudokuArray[70], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="70" />
+        <Button Grid.Row="10" Grid.Column="11" Text="{Binding SudokuArray[71], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="71" />
         
         <!-- Row 10 -->
-        <Button Grid.Row="11" Grid.Column="1" Text="{Binding SudokuArray[72]}" Command="{Binding SolveCommand}" CommandParameter="72" />
-        <Button Grid.Row="11" Grid.Column="2" Text="{Binding SudokuArray[73]}" Command="{Binding SolveCommand}" CommandParameter="73" />
-        <Button Grid.Row="11" Grid.Column="3" Text="{Binding SudokuArray[74]}" Command="{Binding SolveCommand}" CommandParameter="74" />
+        <Button Grid.Row="11" Grid.Column="1" Text="{Binding SudokuArray[72], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="72" />
+        <Button Grid.Row="11" Grid.Column="2" Text="{Binding SudokuArray[73], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="73" />
+        <Button Grid.Row="11" Grid.Column="3" Text="{Binding SudokuArray[74], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="74" />
 
-        <Button Grid.Row="11" Grid.Column="5" Text="{Binding SudokuArray[75]}" Command="{Binding SolveCommand}" CommandParameter="75" />
-        <Button Grid.Row="11" Grid.Column="6" Text="{Binding SudokuArray[76]}" Command="{Binding SolveCommand}" CommandParameter="76" />
-        <Button Grid.Row="11" Grid.Column="7" Text="{Binding SudokuArray[77]}" Command="{Binding SolveCommand}" CommandParameter="77" />
+        <Button Grid.Row="11" Grid.Column="5" Text="{Binding SudokuArray[75], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="75" />
+        <Button Grid.Row="11" Grid.Column="6" Text="{Binding SudokuArray[76], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="76" />
+        <Button Grid.Row="11" Grid.Column="7" Text="{Binding SudokuArray[77], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="77" />
         
-        <Button Grid.Row="11" Grid.Column="9" Text="{Binding SudokuArray[78]}" Command="{Binding SolveCommand}" CommandParameter="78" />
-        <Button Grid.Row="11" Grid.Column="10" Text="{Binding SudokuArray[79]}" Command="{Binding SolveCommand}" CommandParameter="79" />
-        <Button Grid.Row="11" Grid.Column="11" Text="{Binding SudokuArray[80]}" Command="{Binding SolveCommand}" CommandParameter="80" />
+        <Button Grid.Row="11" Grid.Column="9" Text="{Binding SudokuArray[78], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="78" />
+        <Button Grid.Row="11" Grid.Column="10" Text="{Binding SudokuArray[79], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="79" />
+        <Button Grid.Row="11" Grid.Column="11" Text="{Binding SudokuArray[80], Mode=OneWay}" Command="{Binding SolveCommand}" CommandParameter="80" />
 
 
         <Grid Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="11" ColumnSpacing="2" RowDefinitions="Auto, 52" ColumnDefinitions="*,*,*,*,*,*,*,*,*" IsVisible="{Binding SelectedNumber, Converter={StaticResource IsNotNullConverter}}" >
