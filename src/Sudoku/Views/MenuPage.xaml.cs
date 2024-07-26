@@ -18,12 +18,12 @@ public partial class MenuPage : ContentPage
 
 	private async void NewGame_Clicked(object sender, EventArgs e)
 	{
-		await Shell.Current.GoToAsync("Game");
+		await Shell.Current.GoToAsync("Game?ContinueGame=false");
 	}
 	
 	private async void Continue_Clicked(object sender, EventArgs e)
 	{
-		await Shell.Current.GoToAsync("Game?continue=true");
+		await Shell.Current.GoToAsync("Game?ContinueGame=true");
 	}
 	
 	private async void Settings_Clicked(object sender, EventArgs e)

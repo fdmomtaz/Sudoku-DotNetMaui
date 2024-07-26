@@ -6,14 +6,39 @@ using CoreData;
 
 namespace Sudoku;
 
+[QueryProperty(nameof(ContinueGame), "ContinueGame")]
 public partial class GamePage : ContentPage
 {
+    public bool ContinueGame
+    {
+        set
+        {
+            if (value) {
+                string cacheDir = FileSystem.Current.CacheDirectory;
+                string filePath = Path.Combine(cacheDir, "sudoku.json");
+
+                if (File.Exists(filePath))
+                {
+                    string json = File.ReadAllText(filePath);
+                    SudokuArray = JsonSerializer.Deserialize<int?[]>(json);
+                }
+
+            }
+            else {
+                Tuple<int?[], int[]>? generatedSudoku = SudokuGenerator.GetBoard(SudokuGenerator.Difficulty.Medium);
+
+                SudokuArray = generatedSudoku.Item1;
+                providedNumbers = generatedSudoku.Item2;
+            }
+        }
+    }
+
+
 	public GamePage()
 	{
 		InitializeComponent();
 
 		BindingContext = this;
-
 	}
 	
 	private async void Close_Clicked(object sender, EventArgs e)
@@ -21,19 +46,9 @@ public partial class GamePage : ContentPage
 		await Shell.Current.GoToAsync("..");
 	}
 
-    int[] providedNumbers = new int [] { 8,9,14,21,24,25,28,29,36,39,41,42,45,47,53,54,61,64,68,71,77,80 };
+    int[] providedNumbers;
 
-	int?[] sudokuArray = new int? [81] {
-		null, null, null,null, null, null,null, null, 7,
-        1, null, null,null, null, 2,null, null, null,
-        null, null, null,3, null, null,6, 4, null,
-        null, 6, 7,null, null, null,null, null, null,
-        9, null, null,6, null, 7,3, null, null,
-        3, null, 5,null, null, null,null, null, 1,
-        5, null, null,null, null, null,null, 8, null,
-        null, 8, null,null, null, 4,null, null, 5,
-        null, null, null,null, null, 1,null, null, 4
-	};
+	int?[] sudokuArray = new int? [81];
 
 	public int?[] SudokuArray
     {
