@@ -7,9 +7,9 @@
              Shell.NavBarIsVisible="False">
 
     <Grid RowDefinitions="250, *">
-        <Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Aspect="AspectFill" Source="menu_background.jpeg" />
+        <Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Aspect="AspectFill" Source="{AppThemeBinding Light=menu_background.jpeg, Dark=menu_background_dark.jpg}" />
 
-        <Label Grid.Row="0" Text="Sudoku" FontFamily="EloundaRegular" FontSize="50" VerticalOptions="Center" HorizontalOptions="Center" />
+        <Label Grid.Row="0" Text="Sudoku" FontSize="50" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" />
     
         <VerticalStackLayout Grid.Row="1" Spacing="10" Padding="20">
             <Button Text="New Game" Clicked="NewGame_Clicked" />
