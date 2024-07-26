@@ -41,7 +41,7 @@ public class GameViewModel : INotifyPropertyChanged
 
         // if no saved game, generate a new one
         if (generatedSudoku == null)
-            generatedSudoku = SudokuGenerator.GetBoard(SudokuGenerator.Difficulty.Medium);
+            generatedSudoku = SudokuGenerator.GetBoard();
 
         // populate the sudoku array and provided numbers
         SudokuArray = generatedSudoku.Board;

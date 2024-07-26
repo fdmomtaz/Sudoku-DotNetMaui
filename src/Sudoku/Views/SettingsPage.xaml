@@ -7,7 +7,16 @@
 
     <sv:SettingsView HasUnevenRows="true">
         <sv:Section Title="Game Settings">
-            <sv:SwitchCell Title="Hide Used Numbers" On="true" Description="This is description." />
+            <sv:SwitchCell Title="Hide Used Numbers" On="{Binding HideUsedNumbers}" Description="Should the game block the used numbers?" />
+
+            <sv:SwitchCell Title="Game Mode" On="{Binding GameDifficulty}" Description="Easy/Hard" />
+
+        </sv:Section>
+        
+        <sv:Section Title="Game Play">
+
+            <sv:ButtonCell Title="Remove Saved Game" Command="{Binding RemoveSavedGame}" />
+
         </sv:Section>
     </sv:SettingsView>
 </ContentPage>

@@ -4,8 +4,7 @@ public static class SudokuGenerator
 {
     public enum Difficulty
     {
-        Easy = 40,
-        Medium = 30,
+        Easy = 35,
         Hard = 20
     }
 
@@ -94,17 +93,21 @@ public static class SudokuGenerator
         }
     }
 
-    public static SudokuBoard GetBoard(Difficulty difficulty)
+    public static SudokuBoard GetBoard()
     {
+        // get the difficulty from the settings
+        string difficulty = Preferences.Default.Get("GameDifficulty", "Easy");
+        Enum.TryParse(difficulty, out Difficulty difficultyEnum);
+
         int?[] board = new int?[81];
-        int[] providedNumbers = new int[(int)difficulty];
+        int[] providedNumbers = new int[(int)difficultyEnum];
 
         // generate a new board
         int[,] solvedBoard = Generate();
 
         // copy the board to a 1D array
         var rand = new Random();
-        for (int i = 0; i < (int)difficulty; i++)
+        for (int i = 0; i < (int)difficultyEnum; i++)
         {
             int copyIndex = rand.Next(0, 81);
 
